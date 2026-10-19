@@ -955,6 +955,9 @@ KUIKLY_NESTEDSCROLL_PROTOCOL_PROPERTY_IMP
     }
     [super setFrame:frame];
     [self syncScrollViewContentSize];
+    if (scrollView) {
+        scrollView.skipNestScrollLock = NO;
+    }
 }
 - (void)didMoveToSuperview {
     [super didMoveToSuperview];
